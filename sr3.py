@@ -1,20 +1,27 @@
 import struct
 from obj import Obj
 
-
+# clase para escribir un byte
 def char(c):
-    return struct.pack('=c', c.encode('ascii'))
+    # un solo caracter
+    return struct.pack('=c', c.encode('ascii')) 
+    # ejemplo char('A') y retorna la A en binario
 
-def word(c):
-    return struct.pack('=h', c)
+# clase para escribir dos bytes
+def word(w):
+    # word
+    return struct.pack('=h', w) 
 
-def dword(c):
-    return struct.pack('=l', c)
+# clase para escribir cuatro bytes
+def dword(w):
+    # doubleword
+    return struct.pack('=l', w) 
 
-def color(r, g, b):
-    return bytes([b,g,r])
+# funcion para los colores
+def color (b, g, r):
+    return bytes([b, g, r]) # convertir a bytes los colores rgb (0 al 255)
 
-class Render(object):
+class Render(object): # object es la clase a la que hereda
     def __init__(self):
         self.clear_color = color(0,0,0)
         self.draw_color = color(255,255,255)
