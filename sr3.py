@@ -163,5 +163,5 @@ class Render(object): # object es la clase a la que hereda
 
 r = Render()
 r.glCreateWindow(800,800)
-r.load('hand.obj', (10, 10), (40, 40))
+r.load('gummy.obj', (10, 10), (40, 40))
 r.glFinish('sr3_3.bmp')
